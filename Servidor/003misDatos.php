@@ -1,14 +1,15 @@
 <?php
 
-/*Escribe un programa que almacene en variables tu nombre, primer apellido, segundo apellido, 
-email, año en el que naciste y móvil. Luego muéstralos por pantalla dentro de una tabla*/
+/*Es el mismo ejercicio anterior, pero separando la lógica. 
+En el html crearemos el formulario para introducir los datos,
+y luego recogemos los datos y generamos la tabla en el segundo archivo. */
 
-$nombre = "Luis";  //Creamos las variables y le asignamos un valor
-$primerApellido = "Yerga";
-$segundoApellido= "Mayor";
-$email= "lyergamayor1@gmail.com";
-$anoNacimiento = 2004;
-$numeroTLF= 123456789;
+$nombre = $_GET["nombre"];
+$primerApellido =$_GET["1Apell"];
+$segundoApellido= $_GET["2Apell"];
+$email= $_GET["email"];
+$anoNacimiento = $_GET["año"];
+$numeroTLF= $_GET["movil"];
 
 echo "<table border=1>";  //A través de echos damos forma a la tabla con la estructura html
 echo "<tr>";
@@ -26,4 +27,3 @@ echo "<td> $anoNacimiento</td>";
 echo "<td> $numeroTLF </td>";
 echo "</tr>";
 echo "</table>";
-?>
