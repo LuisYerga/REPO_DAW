@@ -4,7 +4,7 @@
 En el html crearemos el formulario para introducir los datos,
 y luego recogemos los datos y generamos la tabla en el segundo archivo. */
 
-$nombre = $_GET["nombre"];
+$nombre = $_GET["nombre"];  //Recibimos del html los datos que introduce el usuario y los guardamos en una variable
 $primerApellido =$_GET["1Apell"];
 $segundoApellido= $_GET["2Apell"];
 $email= $_GET["email"];
