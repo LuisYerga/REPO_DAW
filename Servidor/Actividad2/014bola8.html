@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+<body>
+    <form action="014bola8.php" method="GET">  <!--Enlazamos con el documento php y aplicamos el metodo GET para enviar los datos-->
+        <ul>
+            <li>
+                <label for="pregunta">Realizale una pregunta a la bola</label> <!--Muy importante que el for y el name lleven el mismo nombre, pues este también sera el que llevará en el php para reconocer de quien debe sustraer la información-->
+                <input type="text" id="pregunta" name="pregunta"/>
+            </li>
+        </ul>
+
+        <input type="submit" value="Enviar">  <!--Boton para enviar el formulario-->
+    </form>
+</body>
+</html>
