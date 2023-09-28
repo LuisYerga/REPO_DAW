@@ -8,6 +8,8 @@ adulto entre 18 y 66
 jubilado a partir de 67
 */
 
-$edad=$_GET["edad"];
+$edad = $_GET["edad"]; //Recibimos la edad
 
-echo ($edad<3) ? "Bebe" : ($edad>2 && $edad<13) ? "Niño" : ($edad>12 && $edad<18) ? "Adolescente" : ($edad>17 && $edad<67) ? "Adulto" : "Jubilado";
+echo $edad < 3 ? "Bebe" : ($edad > 2 && $edad < 13 ? "Niño" : ($edad > 12 && $edad < 18 ? "Adolescente" : ($edad > 17 && $edad < 67 ? "Adulto" : ("Jubilado"))));
+/*Vamos consultando las distintas opciones para averiguar cual es la condicion verdadera. Cada vez que ponemos una condicion en false abrimos un parentesis que 
+cerramos al final del Elvies  */ 
