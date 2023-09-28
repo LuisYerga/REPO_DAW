@@ -4,7 +4,7 @@
 completado, vuelve a recorrerlo y calcula cuantos elementos hay de cada uno de los valores almacenando el resultado en un array
  asociativo ['M' => 44, 'F' => 66] (no utilices variables para contar las M o las F). Finalmente, muestra el resultado por pantalla.*/
 
-$listaGrande=[];  //Creamos un array vacio
+$listaGrande=[];  //Creamos un array vacío
 $opciones=["M", "F"]; //Un array con ambas opciones de letras
 $contar= ["M" => 0, "F" => 0]; //Y un array asociativo para contar las apariciones de cada letra
 
