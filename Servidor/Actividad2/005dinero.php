@@ -12,7 +12,21 @@ para que el número de elementos sea mínimo. No se utilizar ninguna instrucció
 2 monedas de 1
 Tip: Puedes forzar a realizar la división entera mediante la función intdiv($dividendo, $divisor) o pasar un número flotante a entero puedes usar 
 la función intval().
-
-
-
 */
+
+$saldo = $_GET["saldo"]; //Obtenemos el saldo
+
+$billetes=[500, 200, 100, 50, 20, 10, 5, 2, 1]; //Declaramos los distintos billetes y monedas en los que podemos descomponer
+
+foreach ($billetes as $valor){ // Iteramos por los distintos billetes
+    $saldo>=$valor ? $saldo=operación($saldo, $valor) : false; //Si nuestro saldo es divisible por el billete llamamos a la función operación
+}
+
+function operación($a, $b){ //Recibimos el saldo y el billete para realizar la división y guardamos el resultado
+    $resultado = intdiv($a,$b);
+    echo "$resultado "; //Imprimimos cuantos billetes o monedas sacamos de cada tipo
+    echo $b > 5 ? "billete" : "moneda";
+    echo $resultado > 1 ? "s de " .($b) : " de " .($b);
+    echo "<br />";
+    return $a= $a %= $b; //Devolvemos el resto de la operación al foreach para que se guarde en la variable saldo y continue descomponiendo
+}
