@@ -4,7 +4,7 @@
 
 $listaOrdenada=[]; //Creamos un array vacio
 
-for ($i=0x;$i<=50; $i+=2){ //Con el for guardamos todos los primos en el array
+for ($i=0x;$i<=50; $i+=2){ //Con el for guardamos todos los primos en el array. Al empezar en un número primo, avanzamos incrementando de dos en dos
     $listaOrdenada[]=$i;
 }
 
