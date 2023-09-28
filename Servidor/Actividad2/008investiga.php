@@ -4,7 +4,7 @@
 disponible desde PHP8 (https://www.php.net/manual/es/control-structures.match.php). 
 Explica con un par de lineas su propósito y mediante código demuestra su uso. */
 
-/*Match nos es util para buscar la expresión que es extrictamente igual a nuestra condición. A cada opción del match le asignaremos un valor 
+/*Match nos es útil para buscar la expresión que es extrictamente igual a nuestra condición. A cada opción del match le asignaremos un valor 
 que devolvera y quedara guardado. */
 
 $numero = 3;
