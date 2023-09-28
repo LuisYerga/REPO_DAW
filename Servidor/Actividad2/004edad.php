@@ -5,10 +5,15 @@ de los casos. Finalmente, muestra el año de jubilación suponiendo que trabajar
 En este caso, no hace falta que previamente crees un formulario, puedes probar el ejercicio vía URL: 004edad.php?edad=33. 
 Tip: $anyoActual = date("Y");
 */
-$edadActual=33;
+$edadActual= $_GET["edadActual"]; //Cogemos la edad a traves del valor que introducimos en la URL
 
-$jubilacion= 67-$edadActual;
+$jubilacion= 67-$edadActual; //Averiguamos cuanto nos falta para alcanzar la edad de jubilación
 
-echo "<p>Dentro de diez años tendra "$edadActual+10 "</p>";
+$anyoActual = date("Y");//Obtenemos el año actual
 
+echo "<p>En ".($anyoActual +10)." tendra " .($edadActual +10). " años</p>"; //Realizamos los echos para saber que edad tendremos en cada año
+
+echo "<p>En ".($anyoActual-10). " tenía " .($edadActual -10). " años</p>";
+
+echo"<p>Te jubilaras en " .($anyoActual + $jubilacion). " con ".($edadActual + $jubilacion)." años</p>";
 ?>
