@@ -18,8 +18,12 @@ echo "El numero tiene $contador digitos <br />";
 /*digitoN(int $num, int $pos): int ‚ devuelve el digito que ocupa, empezando por la izquierda, la posición $pos.*/
 
 function digitosN(int $num, int $pos) : int {
-    
+    return $posicion=substr($num,$pos,-$contador-$pos);
 }
+
+$pos=3;
+
+echo "En la posición $pos el digito es " . ($resultado=digitosN($num, $pos)) . "<br/>"
 
 /*quitaPorDetras(int $num, int $cant): int ‚ le quita por detrás (derecha) $cant digitos.*/
 
