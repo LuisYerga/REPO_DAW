@@ -12,8 +12,8 @@ Cree una página web que solicite x y n, y luego muestre el resultado de pow(x,n
 
 Nota: La función solo debe admitir valores naturales de n: enteros desde 1. */ 
 
-let num=2;
-let potencia=3;
+let num=document.getElementById(num).value;
+let potencia=document.getElementById(potencia).value;
 
 function pow(num,potencia){ //En la función devolvemos el número elevado
     return num**potencia;
