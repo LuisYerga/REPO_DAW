@@ -33,3 +33,6 @@ function checkAge(age) {
 function checkAge2(age){
     return age > 18 || confirm('¿Tienes permiso de tus padres?');  //Si la edad es mayor de 18(true) se devolverá de manera inmediata devido al funcionamiento del operador ||.
 };                                                                 //En caso contrario pasaremos al confirm que devolverá de manera adecuada ambas posibles respuestas, true si uno de los dos es verdadero y false si ambos operandos son falsos
+
+checkAge(age);  //Llamamos a las funciones para que se ejecuten con el valor age
+checkAge2(age);
