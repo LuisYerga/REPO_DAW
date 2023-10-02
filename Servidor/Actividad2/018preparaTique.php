@@ -3,8 +3,4 @@
 productos indicados (la cantidad, se recibe mediante un parámetro GET vía URL). */
 
 $cantidad=$_GET["cant"];
-?>
 
-<form action="018imprimeTique.php" method="GET">  
-    
-</form>
