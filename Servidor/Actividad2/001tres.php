@@ -10,11 +10,11 @@ print ("<p>De mostrar contenido en PHP</p>");
 
 
 
-//Comentario de una linea
+//Comentario de una línea
 
 /*
 Comentario en bloque
-puedes escribir en dos lineas
+puedes escribir en dos líneas
 o más
 */
 ?>

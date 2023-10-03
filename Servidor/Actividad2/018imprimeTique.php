@@ -17,14 +17,14 @@ echo "<th>Cantidad</th>";
 echo "<th>Total Euros</th>";
 echo "<th>Total Pesetas</th>";
 echo "</tr>";
-foreach ($productos as $nombre => $precio){
+foreach ($productos as $nombre => $precio){  //Recorremos el array asociativo 
     echo "<tr>";
     echo "<td> $nombre </td>"; 
     echo "<td> $precio </td>"; 
     $precioPes=$precio*166.39;
     echo "<td> $precioPes </td>"; 
 
-    if ($nombre == "Leche") {
+    if ($nombre == "Leche") { //Creamos diferentes opciones para cada producto
         echo "<td>$cantLeche</td>";
         $totalEuros = $precio * $cantLeche;
         $sumaEuros= $sumaEuros + $totalEuros;
@@ -61,6 +61,6 @@ echo "<td></td>";
 echo "<td></td>";
 echo "<td></td>";
 echo "<td></td>";
-echo "<td>$sumaEuros</td>";
+echo "<td>$sumaEuros</td>"; //Mostramos la suma total
 echo "<td>$sumaPes</td>";
 echo "</tr>";

@@ -11,9 +11,9 @@ $jubilacion= 67-$edadActual; //Averiguamos cuanto nos falta para alcanzar la eda
 
 $anyoActual = date("Y");//Obtenemos el año actual
 
-echo "<p>En ".($anyoActual +10)." tendra " .($edadActual +10). " años</p>"; //Realizamos los echos para saber que edad tendremos en cada año
+echo "<p>En ".($anyoActual +10)." tendra " .($edadActual +10). " años</p>"; //Realizamos los echo's para saber que edad tendremos en cada año
 
 echo "<p>En ".($anyoActual-10). " tenía " .($edadActual -10). " años</p>";
 
-echo"<p>Te jubilaras en " .($anyoActual + $jubilacion). " con ".($edadActual + $jubilacion)." años</p>";
+echo"<p>Te jubilaras en " .($anyoActual + $jubilacion). " con ".($edadActual + $jubilacion)." años</p>";  //Usamos los . para concatenar los datos con las cadenas String
 ?>

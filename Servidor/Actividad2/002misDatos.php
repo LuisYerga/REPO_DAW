@@ -10,7 +10,7 @@ $email= "lyergamayor1@gmail.com";
 $anoNacimiento = 2004;
 $numeroTLF= 123456789;
 
-echo "<table border=1>";  //A través de echos damos forma a la tabla con la estructura html
+echo "<table border=1>";  //A través de echo's damos forma a la tabla con la estructura html
 echo "<tr>";
 echo "<th>Nombre</th>";
 echo "<th>1ºApellido</th>";

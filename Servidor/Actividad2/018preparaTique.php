@@ -13,7 +13,7 @@ foreach($productos as $nombre => $precio){
 };
 ?>
 
-<form action="018imprimeTique.php" method="get">
+<form action="018imprimeTique.php" method="get"> <!--Enviamos los datos a través de inputs ocultos al pulsar el botón-->
  <input type="hidden" id="Leche" name="Leche" value="<?php echo $cantLeche;?>" />
  <input type="hidden" id="Galletas" name="Galletas" value="<?php echo $cantGalletas;?>" />
  <input type="hidden" id="Batidos" name="Batidos" value="<?php echo $cantBat;?>" />

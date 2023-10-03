@@ -23,7 +23,7 @@ for ($b = 0 ;$b<=10; $b++) { //Incrementamos el valor del multiplicador ($b) con
     echo "<td> $b </td>";
     echo "<td> = </td>";
     $result=$a*$b;
-    echo "<td> $result </td>";
+    echo "<td> $result </td>"; //Mostramos el resultado de la operación
     echo "</tr>";
 }
 echo "</tbody>";

@@ -14,7 +14,7 @@ function digitos(int $num) : int{
 $contador=digitos($num); //Llamamos la función y guardamos su resultado
 
 
-echo "El número tiene $contador digitos <br />";
+echo "El número tiene $contador dígitos <br />";
 
 /*digitoN(int $num, int $pos): int ‚ devuelve el digito que ocupa, empezando por la izquierda, la posición $pos.*/
 

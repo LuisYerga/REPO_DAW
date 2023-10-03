@@ -4,10 +4,10 @@
 que puede tener 2, 1 o no tener solución dependiendo del valor del discriminante b²-4ac.Tip: Para 
 calcular la raíz cuadrada deberás utilizar la función sqrt() */
 
-$a=$_GET["a"]; //Obtenemos los valores de la ecuación
+$a=$_GET["a"]; //Obtenemos los valores de la ecuación por vía URL
 $b=$_GET["b"];
 $c=$_GET["c"];
 
-echo $resultado= (-$b + sqrt(($b**2)-4*$a*$c))/(2*$a); //Planteamos las dos posibilidades de la ecuación de segundo grado
+echo $resultado= (-$b + sqrt(($b**2)-4*$a*$c))/(2*$a); //Planteamos las dos posibilidades de la ecuación de segundo grado(+ y - raiz de ...)
 echo "<br />";
 echo $resultado= (-$b - sqrt(($b**2)-4*$a*$c))/(2*$a);

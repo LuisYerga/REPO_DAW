@@ -11,7 +11,7 @@ $email= $_GET["email"];
 $anoNacimiento = $_GET["año"];
 $numeroTLF= $_GET["movil"];
 
-echo "<table border=1>";  //A través de echos damos forma a la tabla con la estructura html
+echo "<table border=1>";  //A través de echo's damos forma a la tabla con la estructura html
 echo "<tr>";
 echo "<th>Nombre</th>";
 echo "<th>1ºApellido</th>";

@@ -23,9 +23,9 @@ foreach ($billetes as $valor){ // Iteramos por los distintos billetes
 }
 
 function operación($a, $b){ //Recibimos el saldo y el billete para realizar la división y guardamos el resultado
-    $resultado = intdiv($a,$b);
+    $resultado = intdiv($a,$b); //Nos quedamos con el cociente de la división
     echo "$resultado "; //Imprimimos cuantos billetes o monedas sacamos de cada tipo
-    echo $b > 5 ? "billete" : "moneda";
+    echo $b > 5 ? "billete" : "moneda"; //Si b es mayor que 5 es porque este es un tipo de billete
     echo $resultado > 1 ? "s de " .($b) : " de " .($b);
     echo "<br />";
     return $a= $a %= $b; //Devolvemos el resto de la operación al foreach para que se guarde en la variable saldo y continue descomponiendo
