@@ -6,12 +6,8 @@ $productos=["Leche"=>5.48 , "Galletas"=>1.50 , "Batidos"=>2.46];
 $cantLeche=$_GET["Leche"];
 $cantGalletas=$_GET["Galletas"];
 $cantBat=$_GET["Batidos"];
-
-foreach($productos as $nombre => $precio){
-    echo "Una unidad de $nombre cuesta $precio <br/>";
-};
-
-
+$sumaEuros=0;
+$sumaPes=0;
 echo "<table border=1>";  //A través de echos damos forma a la tabla con la estructura html
 echo "<tr>";
 echo "<th>Producto</th>";
@@ -34,13 +30,13 @@ foreach ($productos as $nombre => $precio){
         $sumaEuros= $sumaEuros + $totalEuros;
         $totalPesetas = $precioPes * $cantLeche;
         $sumaPes= $sumaPes + $totalPesetas;
-    } elseif ($nombre == "Galletas") {
+    } else if ($nombre == "Galletas") {
         echo "<td>$cantGalletas</td>";
         $totalEuros = $precio * $cantGalletas;
         $sumaEuros= $sumaEuros + $totalEuros;
         $totalPesetas = $precioPes * $cantGalletas;
         $sumaPes= $sumaPes + $totalPesetas;
-    } elseif ($nombre == "Batidos") {
+    } else if ($nombre == "Batidos") {
         echo "<td>$cantBat</td>";
         $totalEuros = $precio * $cantBat;
         $sumaEuros= $sumaEuros + $totalEuros;
