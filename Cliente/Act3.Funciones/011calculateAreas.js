@@ -4,7 +4,7 @@
 debe tomar el tipo de figura y los parámetros necesarios para calcular el área. Si no se proporcionan los parámetros necesarios, la 
 función debería devolver un mensaje indicando que no se pueden calcular el área. Pista: necesitarás usar parámetros opcionales, quizás el uso del operador "..." te sea útil. */
 
-let calcularArea= (figura) =>{
+let calcularArea= (nombre, parametro1 , parametro2=0) =>{
     
 };
 
