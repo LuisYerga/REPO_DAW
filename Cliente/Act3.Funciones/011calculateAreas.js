@@ -5,9 +5,7 @@ debe tomar el tipo de figura y los parámetros necesarios para calcular el área
 función debería devolver un mensaje indicando que no se pueden calcular el área. Pista: necesitarás usar parámetros opcionales, quizás el uso del operador "..." te sea útil. */
 
 let calcularArea= (figura) =>{
-
-
-
+    
 };
 
 let figura = prompt("Introduzca una figura. Recuerde escribir la primera letra en mayúsculas");
