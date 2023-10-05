@@ -1,16 +1,31 @@
 <?php
 
-/*Crea una clase Empleado con su nombre, apellidos y sueldo. Encapsula las propiedades mediante getters/setters y añade métodos para:
-Obtener su nombre completo → getNombreCompleto(): string
-Que devuelva un booleano indicando si debe o no pagar impuestos (se pagan cuando el sueldo es superior a 3333€) → debePagarImpuestos(): bool
+/*Copia la clase del ejercicio anterior y modifícala. Añade una propiedad privada que almacene un array de números de teléfonos. Añade los siguientes métodos:
+public function anyadirTelefono(int $telefono) : void → Añade un teléfono al array
+public function listarTelefonos(): string → Muestra los teléfonos separados por comas
+public function vaciarTelefonos(): void → Elimina todos los teléfonos
 */
 
 class Empleado{
     public function __construct (  // Declaramos nuestro constructor 
         protected String $nombre,
         protected String $apellidos,
-        protected float $sueldo
+        protected float $sueldo,
+        private array $telefono
     ){}
+
+    public function anyadirTelefono($telefono):void{  //Añadimos telefonos al array
+        $this->telefono[]=$telefono;
+    }
+
+    public function listarTelefonos():String{  //Devolvemos un string del array mediante el metodo implode
+        return implode("," , $this->telefono);
+    }
+
+    public function vaciarTelefonos():void{
+        /*unset($this-> telefono);  Devuelve null, no sirve*/
+        $this->telefono = array();  //Vaciamos el array guardando uno vacío por encima
+    }
 
     public function getNombre(){  //Creamos getters y setters para manejar la información de los parámetros
         return $this-> nombre;
@@ -43,9 +58,13 @@ class Empleado{
     }
 }
 
-$empleado1 = new Empleado("Luis", "Yerga Mayor", 1000);  //Creamos un nuevo empleado con sus datos
+$empleado1 = new Empleado("Luis", "Yerga Mayor", 1000,[674858483, 54]);  //Creamos un nuevo empleado con sus datos
 echo "El nombre completo del empleado es " . $empleado1->getNombreCompleto(). "</br>";  //Llamamos al metodo nombreCompleto
 
 $impuestos = $empleado1->debePagarImpuestos() ? "El empleado " . $empleado1->getNombre() . " debe pagar" : "El empleado " . $empleado1->getNombre() . " no debe pagar";
 //Guardamos un mensaje diferente dependiendo del valor del boolean que devuelva el metodo.
 echo $impuestos . "</br>";
+
+echo $empleado1->listarTelefonos();   //Mostramos la lista de teléfonos del empleado
+$empleado1->vaciarTelefonos();  //Llamamos al método para vaciar el array teléfonos
+echo $empleado1->listarTelefonos(); //Comprobamos que se haya borrado
