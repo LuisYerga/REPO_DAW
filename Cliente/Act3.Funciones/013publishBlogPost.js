@@ -4,7 +4,8 @@
 un contenido como argumentos obligatorios. También puede tomar una lista de etiquetas opcional. Si 
 no se proporcionan etiquetas, la publicación se creará sin ellas. */
 
-let publicacion = (titulo, contenido, etiquetas=[]) =>{  //Etiqueta es un valor opcional por lo que la igualamos a un array vacio
+let publicacion = (titulo, contenido, etiquetas) =>{  //Etiqueta es un valor opcional por lo que la igualamos a un array vacio
+    etiquetas = etiquetas ?? [];
     document.write("<h1>" + titulo + "</h1>" );  //Escribimos con la herramienta document.write (similar a echo en php)
     document.write("<p>"+ contenido +"</p>");
     document.write("<ul>");

@@ -4,7 +4,8 @@
 dirección de correo electrónico como argumentos obligatorios. También puede tomar un número de teléfono opcional.
 Si el número de teléfono no se proporciona, la cuenta se creará sin él. */
 
-let crearCuenta = (nombre,correo,tlf="")=>{  //Establecemos el teléfono como vacio en caso de que no se reciba un valor
+let crearCuenta = (nombre,correo,tlf)=>{  //Establecemos el teléfono como vacio en caso de que no se reciba un valor
+    tlf = tlf ?? "";
     let cuenta=[nombre,correo,tlf];
     return cuenta; //Devolvemos el array con los datos
 }
