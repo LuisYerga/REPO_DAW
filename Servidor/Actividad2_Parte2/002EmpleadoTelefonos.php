@@ -58,13 +58,14 @@ class Empleado{
     }
 }
 
-$empleado1 = new Empleado("Luis", "Yerga Mayor", 1000,[674858483, 54]);  //Creamos un nuevo empleado con sus datos
+$empleado1 = new Empleado("Luis", "Yerga Mayor", 1000,[674858483]);  //Creamos un nuevo empleado con sus datos
 echo "El nombre completo del empleado es " . $empleado1->getNombreCompleto(). "</br>";  //Llamamos al metodo nombreCompleto
 
 $impuestos = $empleado1->debePagarImpuestos() ? "El empleado " . $empleado1->getNombre() . " debe pagar" : "El empleado " . $empleado1->getNombre() . " no debe pagar";
 //Guardamos un mensaje diferente dependiendo del valor del boolean que devuelva el metodo.
 echo $impuestos . "</br>";
 
+$empleado1->anyadirTelefono(43);
 echo $empleado1->listarTelefonos();   //Mostramos la lista de teléfonos del empleado
 $empleado1->vaciarTelefonos();  //Llamamos al método para vaciar el array teléfonos
 echo $empleado1->listarTelefonos(); //Comprobamos que se haya borrado
