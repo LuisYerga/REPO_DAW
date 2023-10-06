@@ -1,7 +1,9 @@
 <?php
 
-/*Copia la clase del ejercicio anterior y modifícala. Cambia la constante por una variable estática sueldoTope, 
-de manera que mediante getter/setter puedas modificar su valor. */
+/*Copia la clase del ejercicio anterior y modifícala. Completa el siguiente método con una cadena HTML que muestre 
+los datos de un empleado dentro de un párrafo y todos los teléfonos mediante una lista ordenada (para ello, deberás crear un getter para los teléfonos):
+
+public static function toHtml(Empleado $emp): string*/
 
 class Empleado{
     private static $sueldoTope = 3333;  //Variable estática
@@ -10,7 +12,6 @@ class Empleado{
         protected String $apellidos,
         private array $telefono,
         protected ? float $sueldo=1000.0
-
     ){}
     
     public function getNombre():String{  //Creamos getters y setters para manejar la información de los parámetros

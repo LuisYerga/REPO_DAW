@@ -8,8 +8,9 @@ class Empleado{
     public function __construct (  // Declaramos nuestro constructor 
         protected String $nombre,
         protected String $apellidos,
-        protected float $sueldo=1000.0,
-        private array $telefono
+        private array $telefono,
+        protected ? float $sueldo=1000.0
+
     ){}
     
     public function getNombre(){  //Creamos getters y setters para manejar la información de los parámetros
@@ -48,7 +49,7 @@ class Empleado{
     }
 }
 
-$empleado1 = new Empleado("Luis", "Yerga Mayor", 4000,[674858483]);  //Creamos un nuevo empleado con sus datos
+$empleado1 = new Empleado("Luis", "Yerga Mayor",[674858483]);  //Creamos un nuevo empleado con sus datos
 echo "El nombre completo del empleado es " . $empleado1->getNombreCompleto(). "</br>";  //Llamamos al metodo nombreCompleto
 
 $impuestos = $empleado1->debePagarImpuestos() ? "El empleado " . $empleado1->getNombre() . " debe pagar" : "El empleado " . $empleado1->getNombre() . " no debe pagar";
