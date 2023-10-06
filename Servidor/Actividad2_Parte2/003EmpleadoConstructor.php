@@ -8,7 +8,7 @@ class Empleado{
     public function __construct (  // Declaramos nuestro constructor 
         protected String $nombre,
         protected String $apellidos,
-        protected float $sueldo
+        protected float $sueldo=100.0
     ){}
     public function getNombre(){  //Creamos getters y setters para manejar la información de los parámetros
         return $this-> nombre;
@@ -19,14 +19,11 @@ class Empleado{
     public function getSueldo(){
         return $this-> sueldo;
     }
-    public function setSueldo($sueldo){
-        $this->sueldo=$sueldo ?? 1000;
-        return $this;
-    }
+
     public function getNombreCompleto() : String {  //Metodo que forma el nombre entero del empleado.Solo devuelve Strings
         return $this->nombre ." ". $this->apellidos;
     }
 }
 
-$empleado1 = new Empleado("Luis", "Yerga Mayor", 1000);  //Creamos un nuevo empleado con sus datos
+$empleado1 = new Empleado("Luis", "Yerga Mayor", 2000.0);  //Creamos un nuevo empleado con sus datos
 echo "El nombre completo del empleado es " . $empleado1->getNombreCompleto(). " con sueldo ". $empleado1 -> getSueldo() . "</br>";  //Llamamos al metodo nombreCompleto
