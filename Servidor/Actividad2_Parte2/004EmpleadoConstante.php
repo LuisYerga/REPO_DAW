@@ -4,7 +4,7 @@
 el valor del sueldo que debe pagar impuestos, y modifica el código para utilizar la constante.*/
 
 class Empleado{
-    const SUELDO_TOPE = 3333;
+    const SUELDO_TOPE = 3333;  //Declaramos la constante
     public function __construct (  // Declaramos nuestro constructor 
         protected String $nombre,
         protected String $apellidos,
@@ -22,12 +22,17 @@ class Empleado{
         return $this-> sueldo;
     }
 
+    public function setSueldo($sueldo){
+        $this->sueldo=$sueldo;
+        return $this;
+    }
+
     public function getNombreCompleto() : String {  //Metodo que forma el nombre entero del empleado.Solo devuelve Strings
         return $this->nombre ." ". $this->apellidos;
     }
 
-    public function debePagarImpuestos():bool{  //Metodo que devuelve un boolean true si el sueldo es mayor al numero o false en caso contrario
-        return $this->sueldo > self::SUELDO_TOPE;
+    public function debePagarImpuestos():bool{  //Metodo que devuelve un boolean true si el sueldo es mayor a la constante
+        return $this->sueldo > self::SUELDO_TOPE;  //Accedemos a la const por haciendo referencia a la clase (Empleado:: == self::)
     }
     public function anyadirTelefono($telefono):void{  //Añadimos telefonos al array
         $this->telefono[]=$telefono;
@@ -50,7 +55,7 @@ $impuestos = $empleado1->debePagarImpuestos() ? "El empleado " . $empleado1->get
 //Guardamos un mensaje diferente dependiendo del valor del boolean que devuelva el metodo.
 echo $impuestos . "</br>";
 
-$empleado1->anyadirTelefono(43);
-echo $empleado1->listarTelefonos();   //Mostramos la lista de teléfonos del empleado
+$empleado1->anyadirTelefono(43); //Añadimos un telefono al array
+echo "La lista de telefonos del empleado es " . $empleado1->listarTelefonos() . "</br>";   //Mostramos la lista de teléfonos del empleado
 $empleado1->vaciarTelefonos();  //Llamamos al método para vaciar el array teléfonos
-echo $empleado1->listarTelefonos(); //Comprobamos que se haya borrado
+echo "La lista de telefonos del empleado es " . $empleado1->listarTelefonos() ."</br>"; //Comprobamos que se haya borrado

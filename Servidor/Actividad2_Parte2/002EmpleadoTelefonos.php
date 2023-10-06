@@ -65,7 +65,7 @@ $impuestos = $empleado1->debePagarImpuestos() ? "El empleado " . $empleado1->get
 //Guardamos un mensaje diferente dependiendo del valor del boolean que devuelva el metodo.
 echo $impuestos . "</br>";
 
-$empleado1->anyadirTelefono(43);
-echo $empleado1->listarTelefonos();   //Mostramos la lista de teléfonos del empleado
+$empleado1->anyadirTelefono(43); //Añadimos un telefono al array
+echo "La lista de telefonos del empleado es " . $empleado1->listarTelefonos() . "</br>";   //Mostramos la lista de teléfonos del empleado
 $empleado1->vaciarTelefonos();  //Llamamos al método para vaciar el array teléfonos
-echo $empleado1->listarTelefonos(); //Comprobamos que se haya borrado
+echo "La lista de telefonos del empleado es " . $empleado1->listarTelefonos() ."</br>"; //Comprobamos que se haya borrado
