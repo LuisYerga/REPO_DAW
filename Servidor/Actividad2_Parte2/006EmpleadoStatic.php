@@ -52,11 +52,30 @@ class Empleado{
         return implode("," , $this->telefono);
     }
 
+    public function getTelefonos(): array{  //Añadimos un getTelefonos para sacar el array
+        return $this-> telefono;
+    }
+
     public function vaciarTelefonos():void{
-        /*unset($this-> telefono);  Devuelve null, no sirve*/
         $this->telefono = array();  //Vaciamos el array guardando uno vacío por encima
     }
+
+    public static function toHtml (Empleado $empleado1):String{
+        $html = "<p>";  //Vamos guardando la estructura html en una variable para devolverla al final de la función
+        $html .= "El nombre completo es " .$empleado1->getNombreCompleto(). " y su sueldo es de ". $empleado1->getSueldo() . "</br>";
+        $html .= "Lista Telefonos";
+        $html .= "<ol>"; //Lista ordenada
+        $listaTelf= $empleado1->getTelefonos();  //Obtenemos el array de numeros
+        foreach($listaTelf as $tlf){  //Recorremos uno a uno los elementos del array
+            $html.= "<li>" .$tlf . "</li>";
+        }
+        $html.="</ol>";
+        $html .= "</p>";
+        return $html;
+    }
 }
+
+
 
 $empleado1 = new Empleado("Luis", "Yerga Mayor",[674858483]);  //Creamos un nuevo empleado con sus datos
 echo "El nombre completo del empleado es " . $empleado1->getNombreCompleto(). "</br>";  //Llamamos al metodo nombreCompleto
@@ -66,8 +85,12 @@ $impuestos = $empleado1->debePagarImpuestos() ? "El empleado " . $empleado1->get
 echo $impuestos . "</br>";
 
 $empleado1->anyadirTelefono(43); //Añadimos un telefono al array
+
+echo "El sueldo tope es " . $empleado1->getSueldoTope();  //Mostramos el sueldoTope accediendo por el get
+
+$html = Empleado::toHtml($empleado1);  //Llamamos a la función estática toHtml y guardamos en la variable lo que devuelva. IMPORTANTE mostrar la lista antes de vaciar los teléfonos más abajo(Parece muy obvio a que si...)
+echo $html;
+
 echo "La lista de telefonos del empleado es " . $empleado1->listarTelefonos() . "</br>";   //Mostramos la lista de teléfonos del empleado
 $empleado1->vaciarTelefonos();  //Llamamos al método para vaciar el array teléfonos
 echo "La lista de telefonos del empleado es " . $empleado1->listarTelefonos() ."</br>"; //Comprobamos que se haya borrado
-
-echo "El sueldo tope es " . $empleado1->getSueldoTope();  //Mostramos el sueldoTope accediendo por el get
