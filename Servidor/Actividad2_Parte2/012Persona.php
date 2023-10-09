@@ -5,7 +5,7 @@ métodos que ya están hechos. Trabajador es una clase abstracta que ahora almac
 El sueldo de un Empleado se calcula a partir de las horas trabajadas y lo que cobra por hora. Para los Gerentes, su sueldo se incrementa porcentualmente 
 en base a su edad: salario + salario*edad/100*/
 
-abstract class Persona{  //Creamos la clase persona con los atributos y metodos que heredará Empleado
+ abstract class Persona{  //Creamos la clase persona con los atributos y metodos que heredará Empleado
     public function __construct(
         protected String $nombre,
         protected String $apellidos,
@@ -28,6 +28,4 @@ abstract class Persona{  //Creamos la clase persona con los atributos y metodos 
     public function getNombreCompleto() : String {  //Metodo que forma el nombre entero del empleado.Solo devuelve Strings
         return $this->nombre ." ". $this->apellidos;
     }
-
-    abstract public static function toHtml (Persona $p):String; //Clase abstracta que heradará Empleado para ser reescrita
 }

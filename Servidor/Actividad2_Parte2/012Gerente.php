@@ -1,7 +1,7 @@
 <?php
 
 include("./012Trabajador.php");
-class Gerente{
+class Gerente extends Trabajador{
     public function __construct(
         String $nombre,
         String $apellidos,
