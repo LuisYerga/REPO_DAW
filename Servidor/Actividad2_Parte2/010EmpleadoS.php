@@ -50,7 +50,7 @@ class Empleado extends Persona{  //Creamos la herencia de Persona en Empleado
     }
 
     public static function toHtml (Persona $p):String{
-        if($p instanceof Empleado){
+        if($p instanceof Empleado){ //Comprobamos que p pertenece también a Empleado
         $html = "<p>";  //Vamos guardando la estructura html en una variable para devolverla al final de la función
         $html .= "El nombre completo es " .$p->getNombreCompleto(). " y su sueldo es de ". $p->getSueldo() . "</br>";
         $html .= "Lista Telefonos";
@@ -65,14 +65,12 @@ class Empleado extends Persona{  //Creamos la herencia de Persona en Empleado
         return $html;   
     }
 
-    public function mostrarInfo(Persona $p):String {
-        if($p instanceof Empleado){
-            $html= "<p>";
-            $html .= $impuestos;
-            $html .= "El sueldo tope es " . $this->getSueldoTope();
-            $html .= "La lista de telefonos del empleado es " . $this->listarTelefonos();
-            $html .= "</p>";
-        }
+    public function __toString ():String {  //Funcion toString con los datos del usuario
+        $html= "<p>";
+        $html .= $this->debePagarImpuestos() ? "El empleado " . $this->getNombre() . " debe pagar" : "El empleado " . $this->getNombre() . " no debe pagar </br>";
+        $html .= "El sueldo tope es " . $this->getSueldoTope() . "</br>";
+        $html .= "La lista de telefonos del empleado es " . $this->listarTelefonos() . "</br>";
+        $html .= "</p>";
         return $html;
     }
 }
@@ -81,13 +79,9 @@ class Empleado extends Persona{  //Creamos la herencia de Persona en Empleado
 
 $empleado1 = new Empleado("Luis","Yerga Mayor", 22 ,[674858483],3000.0);  //Creamos un nuevo empleado con sus datos
 
-$impuestos = $empleado1->debePagarImpuestos() ? "El empleado " . $empleado1->getNombre() . " debe pagar" : "El empleado " . $empleado1->getNombre() . " no debe pagar";
-//Guardamos un mensaje diferente dependiendo del valor del boolean que devuelva el metodo.
-
 $empleado1->anyadirTelefono(43); //Añadimos un telefono al array
 
 $html1 = Empleado::toHtml($empleado1);  //Llamamos a la función estática toHtml y guardamos en la variable lo que devuelva. IMPORTANTE mostrar la lista antes de vaciar los teléfonos más abajo(Parece muy obvio a que si...)
 echo $html1;
 
-$html2 = Empleado::mostrarInfo($empleado1);
-echo $html2;
+echo $empleado1;  //Invocamos a la función toString

@@ -50,7 +50,7 @@ class Empleado extends Persona{  //Creamos la herencia de Persona en Empleado
     }
 
     public static function toHtml (Persona $p):String{
-        if($p instanceof Empleado){
+        if($p instanceof Empleado){ //Comprobamos que p pertenece también a Empleado
         $html = "<p>";  //Vamos guardando la estructura html en una variable para devolverla al final de la función
         $html .= "El nombre completo es " .$p->getNombreCompleto(). " y su sueldo es de ". $p->getSueldo() . "</br>";
         $html .= "Lista Telefonos";

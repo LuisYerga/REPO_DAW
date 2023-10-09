@@ -1,15 +1,16 @@
 <?php
-include("./008PersonaH.php");//include para acceder al archivo con el padre
+include("./011PersonaA.php");//include para acceder al archivo con el padre
 
 class Empleado extends Persona{  //Creamos la herencia de Persona en Empleado
     private static float $sueldoTope = 3333.0;  //Variable estática
     public function __construct (  // Declaramos nuestro constructor 
         String $nombre,
         String $apellidos,
+        int $edad,
         private array $telefono,
         protected ? float $sueldo=1000.0
     ){
-        parent::__construct($nombre, $apellidos);  //Llamamos a las propiedades heredadas
+        parent::__construct($nombre, $apellidos, $edad);  //Llamamos a las propiedades heredadas
     }
 
     public function getSueldo(): float{
@@ -30,7 +31,7 @@ class Empleado extends Persona{  //Creamos la herencia de Persona en Empleado
     }
 
     public function debePagarImpuestos():bool{  //Metodo que devuelve un boolean true si el sueldo es mayor a la constante
-        return $this->sueldo > self::$sueldoTope;  //Accedemos a la const por haciendo referencia a la clase (Empleado:: == self::)
+        return $this->edad > 21 && $this->sueldo > self::$sueldoTope;  //Accedemos a la const por haciendo referencia a la clase (Empleado:: == self::)
     }
     public function anyadirTelefono($telefono):void{  //Añadimos telefonos al array
         $this->telefono[]=$telefono;
@@ -60,28 +61,29 @@ class Empleado extends Persona{  //Creamos la herencia de Persona en Empleado
         }
         $html.="</ol>";
         $html .= "</p>";
+        return $html;  
+        }else{  //Si no encuentra la función abstracta retornaremos este mensaje
+            return "Imposible de procesar la petición";
+        }
     }
-        return $html;   
+
+    public function __toString ():String {  //Funcion toString con los datos del usuario
+        $html= "<p>";
+        $html .= $this->debePagarImpuestos() ? "El empleado " . $this->getNombre() . " debe pagar" : "El empleado " . $this->getNombre() . " no debe pagar </br>";
+        $html .= "El sueldo tope es " . $this->getSueldoTope() . "</br>";
+        $html .= "La lista de telefonos del empleado es " . $this->listarTelefonos() . "</br>";
+        $html .= "</p>";
+        return $html;
     }
 }
 
 
 
-$empleado1 = new Empleado("Luis","Yerga Mayor",[674858483],3000.0);  //Creamos un nuevo empleado con sus datos
-echo "El nombre completo del empleado es " . $empleado1->getNombreCompleto(). "</br>";  //Llamamos al metodo nombreCompleto
-
-$impuestos = $empleado1->debePagarImpuestos() ? "El empleado " . $empleado1->getNombre() . " debe pagar" : "El empleado " . $empleado1->getNombre() . " no debe pagar";
-//Guardamos un mensaje diferente dependiendo del valor del boolean que devuelva el metodo.
-echo $impuestos . "</br>";
+$empleado1 = new Empleado("Luis","Yerga Mayor", 22 ,[674858483],3000.0);  //Creamos un nuevo empleado con sus datos
 
 $empleado1->anyadirTelefono(43); //Añadimos un telefono al array
 
-echo "El sueldo tope es " . $empleado1->getSueldoTope();  //Mostramos el sueldoTope accediendo por el get
+$html1 = Empleado::toHtml($empleado1);  //Llamamos a la función estática toHtml y guardamos en la variable lo que devuelva. IMPORTANTE mostrar la lista antes de vaciar los teléfonos más abajo(Parece muy obvio a que si...)
+echo $html1;
 
-$html = Empleado::toHtml($empleado1);  //Llamamos a la función estática toHtml y guardamos en la variable lo que devuelva. IMPORTANTE mostrar la lista antes de vaciar los teléfonos más abajo(Parece muy obvio a que si...)
-echo $html;
-
-echo "La lista de telefonos del empleado es " . $empleado1->listarTelefonos() . "</br>";   //Mostramos la lista de teléfonos del empleado
-$empleado1->vaciarTelefonos();  //Llamamos al método para vaciar el array teléfonos
-echo "La lista de telefonos del empleado es " . $empleado1->listarTelefonos() ."</br>"; //Comprobamos que se haya borrado
-
+echo $empleado1;  //Invocamos a la función toString
