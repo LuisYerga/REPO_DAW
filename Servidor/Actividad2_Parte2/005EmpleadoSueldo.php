@@ -4,7 +4,7 @@
 de manera que mediante getter/setter puedas modificar su valor. */
 
 class Empleado{
-    private static $sueldoTope = 3333;  //Variable estática
+    private static float $sueldoTope = 3333;  //Variable estática
     public function __construct (  // Declaramos nuestro constructor 
         protected String $nombre,
         protected String $apellidos,

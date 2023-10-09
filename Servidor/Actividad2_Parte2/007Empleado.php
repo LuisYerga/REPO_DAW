@@ -1,20 +1,17 @@
 <?php
+include("./007Persona.php");//include para acceder al archivo con el padre
 
-class Empleado{
-    private static $sueldoTope = 3333;  //Variable estática
+class Empleado extends Persona{  //Creamos la herencia de Persona en Empleado
+    private static float $sueldoTope = 3333.0;  //Variable estática
     public function __construct (  // Declaramos nuestro constructor 
-        protected String $nombre,
-        protected String $apellidos,
+        String $nombre,
+        String $apellidos,
         private array $telefono,
         protected ? float $sueldo=1000.0
-    ){}
-    
-    public function getNombre():String{  //Creamos getters y setters para manejar la información de los parámetros
-        return $this-> nombre;
+    ){
+        parent::__construct($nombre, $apellidos);  //Llamamos a las propiedades heredadas
     }
-    public function getApellido() :String{
-        return $this-> apellidos;
-    }
+
     public function getSueldo(): float{
         return $this-> sueldo;
     }
@@ -30,10 +27,6 @@ class Empleado{
 
     public static function setSueldoTope($sueldoTope) :float{
         self::$sueldoTope=$sueldoTope;
-    }
-
-    public function getNombreCompleto() : String {  //Metodo que forma el nombre entero del empleado.Solo devuelve Strings
-        return $this->nombre ." ". $this->apellidos;
     }
 
     public function debePagarImpuestos():bool{  //Metodo que devuelve un boolean true si el sueldo es mayor a la constante
@@ -72,7 +65,7 @@ class Empleado{
 
 
 
-$empleado1 = new Empleado("Luis", "Yerga Mayor",[674858483]);  //Creamos un nuevo empleado con sus datos
+$empleado1 = new Empleado("Luis","Yerga Mayor",[674858483],3000.0);  //Creamos un nuevo empleado con sus datos
 echo "El nombre completo del empleado es " . $empleado1->getNombreCompleto(). "</br>";  //Llamamos al metodo nombreCompleto
 
 $impuestos = $empleado1->debePagarImpuestos() ? "El empleado " . $empleado1->getNombre() . " debe pagar" : "El empleado " . $empleado1->getNombre() . " no debe pagar";

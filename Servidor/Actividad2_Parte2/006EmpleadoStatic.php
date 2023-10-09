@@ -6,7 +6,7 @@ los datos de un empleado dentro de un párrafo y todos los teléfonos mediante u
 public static function toHtml(Empleado $emp): string*/
 
 class Empleado{
-    private static $sueldoTope = 3333;  //Variable estática
+    private static float $sueldoTope = 3333;  //Variable estática
     public function __construct (  // Declaramos nuestro constructor 
         protected String $nombre,
         protected String $apellidos,
