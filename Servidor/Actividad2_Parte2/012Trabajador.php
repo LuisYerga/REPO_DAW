@@ -3,19 +3,19 @@
 include("./012Persona.php");
 
 abstract class Trabajador extends Persona{
-    private static float $sueldoTope = 3333.0; 
+    private static float $sueldoTope = 3333.0; //Declaramos un sueldo tope
     public function __construct(
         String $nombre,
         String $apellidos,
         int $edad,
-        private array $telefono
+        private array $telefono //Añadimos telefono en trabajadores
     ){
-        parent::__construct($nombre, $apellidos, $edad);
+        parent::__construct($nombre, $apellidos, $edad); //Recibimos los atributos de Persona
     }
-    abstract public function calcularSueldo() : float;
+    abstract public function calcularSueldo() : float; //Declaramos el método abstracto para usarse en Gerente y Empleado
 
     public function debePagarImpuestos():bool{  //Metodo que devuelve un boolean true si el sueldo es mayor a la constante
-        return $this->edad > 21 && $this->calcularSueldo() > self::$sueldoTope;
+        return $this->edad > 21 && $this->calcularSueldo() > self::$sueldoTope;  //Cuando ejecutamos la función en uno de los hijos llamamos a la función calcular sueldo para poder ver lo que devuelve(el sueldo del empleado o gerente)
     }
 
     public function anyadirTelefono($telefono):void{  //Añadimos telefonos al array
@@ -40,9 +40,8 @@ abstract class Trabajador extends Persona{
     public static function setSueldoTope($sueldoTope) :float{
         self::$sueldoTope=$sueldoTope;
     }
-    
-    public static function toHtml (Persona $p):String{
-        if($p instanceof Empleado){ //Comprobamos que p pertenece también a Empleado
+
+    public static function toHtml (Persona $p):String{ //Debemos poner el metodo toHtml en todos los hijos de Persona
         $html = "<p>";  //Vamos guardando la estructura html en una variable para devolverla al final de la función
         $html .= "El nombre completo es " .$p->getNombreCompleto(). " y su sueldo es de ". $p->getSueldo() . "</br>";
         $html .= "Lista Telefonos";
@@ -54,8 +53,5 @@ abstract class Trabajador extends Persona{
         $html.="</ol>";
         $html .= "</p>";
         return $html;  
-        }else{  //Si no encuentra la función abstracta retornaremos este mensaje
-            return "Imposible de procesar la petición";
-        }
     }
 }

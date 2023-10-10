@@ -10,10 +10,10 @@ class Empleado extends Trabajador{
         private int $horasTrabajadas,
         private float $precioPorHora
     ){
-        parent::__construct($nombre, $apellidos, $edad, $telefono);
+        parent::__construct($nombre, $apellidos, $edad, $telefono); //Recibimos todos los datos de Persona y Trabajador
     }
     
-    public function calcularSueldo() :float{
+    public function calcularSueldo() :float{ //Reformulamos la función heredada
         return $this->horasTrabajadas * $this->precioPorHora;
     }
 
