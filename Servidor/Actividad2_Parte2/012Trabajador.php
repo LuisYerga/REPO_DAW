@@ -40,4 +40,22 @@ abstract class Trabajador extends Persona{
     public static function setSueldoTope($sueldoTope) :float{
         self::$sueldoTope=$sueldoTope;
     }
+    
+    public static function toHtml (Persona $p):String{
+        if($p instanceof Empleado){ //Comprobamos que p pertenece también a Empleado
+        $html = "<p>";  //Vamos guardando la estructura html en una variable para devolverla al final de la función
+        $html .= "El nombre completo es " .$p->getNombreCompleto(). " y su sueldo es de ". $p->getSueldo() . "</br>";
+        $html .= "Lista Telefonos";
+        $html .= "<ol>"; //Lista ordenada
+        $listaTelf= $p->getTelefonos();  //Obtenemos el array de numeros
+        foreach($listaTelf as $tlf){  //Recorremos uno a uno los elementos del array
+            $html.= "<li>" .$tlf . "</li>";
+        }
+        $html.="</ol>";
+        $html .= "</p>";
+        return $html;  
+        }else{  //Si no encuentra la función abstracta retornaremos este mensaje
+            return "Imposible de procesar la petición";
+        }
+    }
 }
