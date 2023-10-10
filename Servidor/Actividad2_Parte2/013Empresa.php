@@ -1,11 +1,12 @@
 <?php
 
+include("./013Trabajador.php");
 class Empresa{
     public function __construct(
         protected String $nombre,
         protected String $direccion,
         protected array $trabajadores
-    )
+    ){}
 
     public function getNombre():String{  //Creamos getters y setters para manejar la información de los parámetros
         return $this-> nombre;
@@ -22,10 +23,22 @@ class Empresa{
         return $this;
     }
     public function anyadirTrabajor(Trabajador $t) : String {
-        $this->trabajadores = $t;
+        $this->trabajadores = $t->getNombre();
         return $this;
     }
     public function listarTrabajadoresHtml():String{
-        
+        $html= "<p>Lista de Trabajadores</p>";
+        foreach($this->trabajadores as $trabajador){
+            $html.= Trabajador::toHtml($trabajador);
+        }
+        return $html;
+    }
+
+    public function getCosteNominas():float{
+        $costeNominas;
+        foreach($this->trabajadores as $trabajador){
+            $costeNominas+= $trabajador->calcularSueldo();
+        }
     }
 }
+
