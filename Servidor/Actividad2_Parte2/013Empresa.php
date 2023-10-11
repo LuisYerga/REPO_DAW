@@ -23,7 +23,7 @@ class Empresa{
         return $this;
     }
     public function anyadirTrabajor(Trabajador $t) : String {
-        $this->trabajadores = $t->getNombre();
+        $this->trabajadores = $t->getNombreCompleto();
         return $this;
     }
     public function listarTrabajadoresHtml():String{

@@ -41,17 +41,7 @@ abstract class Trabajador extends Persona{
         self::$sueldoTope=$sueldoTope;
     }
 
-    public static function toHtml (Persona $p):String{ //Debemos poner el metodo toHtml en todos los hijos de Persona
-        $html = "<p>";  //Vamos guardando la estructura html en una variable para devolverla al final de la función
-        $html .= "El nombre completo es " .$p->getNombreCompleto(). " y su sueldo es de ". $p->getSueldo() . "</br>";
-        $html .= "Lista Telefonos";
-        $html .= "<ol>"; //Lista ordenada
-        $listaTelf= $p->getTelefonos();  //Obtenemos el array de numeros
-        foreach($listaTelf as $tlf){  //Recorremos uno a uno los elementos del array
-            $html.= "<li>" .$tlf . "</li>";
-        }
-        $html.="</ol>";
-        $html .= "</p>";
-        return $html;  
-    }
+    abstract public static function toHtml (Persona $p):String; //Debemos poner el metodo toHtml en todos los hijos de Persona
+       
+    
 }
