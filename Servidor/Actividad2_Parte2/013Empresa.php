@@ -1,11 +1,12 @@
 <?php
 
 include("./013Trabajador.php");
+
 class Empresa{
+    protected array $trabajadores=[];
     public function __construct(
         protected String $nombre,
-        protected String $direccion,
-        protected array $trabajadores
+        protected String $direccion
     ){}
 
     public function getNombre():String{  //Creamos getters y setters para manejar la información de los parámetros
@@ -42,3 +43,4 @@ class Empresa{
     }
 }
 
+$empresa = new Empresa("Empresa","Calle falsa");
