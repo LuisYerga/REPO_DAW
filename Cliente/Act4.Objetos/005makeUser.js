@@ -21,4 +21,4 @@ function makeUser() {
 let user = makeUser();
 alert( user.ref.name ); 
 
-//No se devuelve nada en un principio. Esto ocurre porque ref se refiere al propio objeto, guardando su nombre el cual es undefined.
+//No se devuelve nada en un principio. Esto ocurre porque ref se refiere al propio objeto, guardando su nombre el cual es undefined.Para mostrar el nombre es suficiente con user.name
