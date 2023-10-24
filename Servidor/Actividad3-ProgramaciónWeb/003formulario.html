@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>003formulario</title>
+    
+</head>
+<body>
+    <form action="003validacion.php" method="post"> <!--Método post para enviar los datos-->
+        <p>
+        <label for="nombre"> Nombre</label>
+        <input type="text" name="nombre" id="nombre" required> <br> <!--Añadimos required a cada input-->
+        </p>
+        <p>
+        <label for="apellidos">Apellidos</label>
+        <input type="text" name="apellidos" id="apellidos" required> <br>
+        </p>
+        <p>
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email" required> <br>
+        </p>
+        <p>
+        <label for="url">URL</label>
+        <input type="text" name="url" id="url" required> <br>
+        </p>
+        <p>
+        <label for="sexo">Sexo:</label> <br>
+        <label for="sexo">Hombre</label> 
+        <input type="radio" name="sexo" id="sexo" value="Hombre" required> <!--Radio solo permite seleccionar uno-->
+        <label for="sexo">Mujer</label> 
+        <input type="radio" name="sexo" id="sexo" value="Mujer" required> 
+        </p>
+        <p>
+        <label for="vivienda">Nº de convivientes </label> 
+        <input type="text" name="vivienda" id="vivienda" required> <br>
+        </p>
+        <p>
+        <label for="aficiones">Aficiones:</label> <br>
+        <input type="checkbox" name="checkbox[]" id="check1" value="Dormir">  <!--Enviamos checkbox como un array, por si el usuario marca mas de una-->
+        <label for="check1">Dormir</label> <br>
+        <input type="checkbox" name="checkbox[]" id="check2" value="Andar"> 
+        <label for="check2">Andar</label> <br>
+        <input type="checkbox" name="checkbox[]" id="check3" value="Ver Pelis"> 
+        <label for="check3">Ver Pelis</label> <br>
+        <input type="checkbox" name="checkbox[]" id="check4" value="Tejer"> 
+        <label for="check4">Tejer</label> <br>
+        </p>
+        <p>
+        <label for="menu">Menu favorito</label> <br>
+        <select name="menu" id="menu" required>  
+            <option>Pollo</option>
+            <option>Carne</option>
+            <option>Vegano</option>
+            <option>Vegetariano</option>           
+        </select>
+        </p>
+        <input type="submit" value="Enviar"> <!--Enviamos el formulario-->
+    </form>
+</body>
+</html>
