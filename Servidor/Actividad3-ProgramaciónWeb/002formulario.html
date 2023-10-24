@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>002formulario</title>
+    
+</head>
+<body>
+    <form action="002formulario.php" method="post">
+        <label for="nombre"> Nombre</label>
+        <input type="text" name="nombre" id="nombre"> <br>
+
+        <label for="apellidos">Apellidos</label>
+        <input type="text" name="apellidos" id="apellidos"> <br>
+
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email"> <br>
+
+        <label for="url">URL</label>
+        <input type="text" name="url" id="url"> <br>
+
+        <label for="sexo">Sexo:</label> <br>
+        <label for="sexo">Hombre</label> 
+        <input type="radio" name="sexo" id="sexo" value="Hombre">
+        <label for="sexo">Mujer</label> 
+        <input type="radio" name="sexo" id="sexo" value="Mujer"> 
+        <label for="sexo">Por favor</label> 
+        <input type="radio" name="sexo" id="sexo" value="Por favor"> <br>
+        
+        <label for="vivienda">Nº de convivientes </label> 
+        <input type="text" name="vivienda" id="vivienda"> <br>
+
+        <label for="aficiones">Aficiones:</label> <br>
+        <input type="checkbox" name="checkbox" id="check1" value="Dormir"> 
+        <label for="check1">Dormir</label> <br>
+        <input type="checkbox" name="checkbox" id="check2" value="Andar"> 
+        <label for="check2">Andar</label> <br>
+        <input type="checkbox" name="checkbox" id="check3" value="Ver Pelis"> 
+        <label for="check3">Ver Pelis</label> <br>
+        <input type="checkbox" name="checkbox" id="check4" value="Tejer"> 
+        <label for="check4">Tejer</label> <br>
+
+        <label for="aficiones">Menu favorito</label> <br>
+        <select multiple id="seleccion">
+            <option>Pollo</option>
+            <option>Carne</option>
+            <option>Vegano</option>
+            <option>Vegetariano</option>           
+        </select>
+
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>
