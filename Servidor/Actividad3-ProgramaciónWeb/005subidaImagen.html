@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>004subida</title>
+    <title>005subidaImagen</title>
     
 </head>
 <body>
-    <form action="004subida.php" method="post" enctype="multipart/form-data"> <!--Método post para enviar los datos. Añadimos enctype para enviar archivos-->
+    <form action="005subidaImagen.php" method="post" enctype="multipart/form-data"> 
         <p>
         <label for="archivo"> Subir archivo </label>
-        <input type="file" name="archivo" id="archivo" required> <br> 
+        <input type="file" accept="image/*" name="archivo" id="archivo" required> <br> <!--Aceptamos solo imagenes-->
         </p>
         <p>
         <label for="altura">Altura</label>
