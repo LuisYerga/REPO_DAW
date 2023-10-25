@@ -4,15 +4,30 @@
 comprueba los tipos de los datos y que cumplen los valores esperados (por ejemplo, en los checkboxes que los valores recogidos forman parte de todos los posibles).
 Puedes probar a pasarle datos erróneos vía URL y comprobar su comportamiento. Tip: Investiga el uso de la función filter_var.*/
 
-$nombre=$_POST["nombre"]; //Guardamos en variables los datos del formulario recibidos
-$apellidos=$_POST["apellidos"];
-$email=$_POST["email"];
-$url=$_POST["url"];
-$sexo=$_POST["sexo"];
-$vivienda=$_POST["vivienda"];
-$resultCheckbox = $_POST["checkbox"];
-$menu=$_POST["menu"];
-
+if(isset($_POST["nombre"])){ //Comprobamos que los datos se reciben bien y rellenos del formulario
+    $nombre=$_POST["nombre"]; 
+}
+if(isset($_POST["apellidos"])){
+    $apellidos=$_POST["apellidos"];
+}
+if(isset($_POST["email"])){
+    $email=$_POST["email"];
+}
+if(isset($_POST["url"])){
+    $url=$_POST["url"];
+}
+if(isset($_POST["sexo"])){
+    $sexo=$_POST["sexo"];
+}
+if(isset($_POST["vivienda"])){
+    $vivienda=$_POST["vivienda"];
+}
+if(isset($_POST["checkbox"])){
+    $resultCheckbox = $_POST["checkbox"];
+}
+if(isset($_POST["menu"])){
+    $menu=$_POST["menu"];
+}
 
 if(is_string($nombre)){ //Comprobamos que los parametros de los valores sean los correctos
     if(is_string($apellidos)){

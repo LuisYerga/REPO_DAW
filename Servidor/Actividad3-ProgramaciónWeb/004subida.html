@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>004subida</title>
+    
+</head>
+<body>
+    <form action="004subida.php" method="post" enctype="multipart/form-data"> <!--Método post para enviar los datos-->
+        <p>
+        <label for="archivo"> Subir archivo </label>
+        <input type="file" name="archivo" id="archivo" required> <br> 
+        </p>
+        <p>
+        <label for="altura">Altura</label>
+        <input type="number" name="altura" id="altura" required> <br>
+        </p>
+        <p>
+        <label for="anchura">Anchura</label>
+        <input type="number" name="anchura" id="anchura" required> <br>
+        </p>
+        <input type="submit" value="Enviar"> <!--Enviamos el formulario-->
+    </form>
+</body>
+</html>
