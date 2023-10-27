@@ -10,7 +10,7 @@ calculator.read();
 alert( "Sum=" + calculator.sum() );
 alert( "Mul=" + calculator.mul() );*/
 
-function Calculator () {
+function Calculator () { //Creamos la función calculadora con sus métodos
     this.read=function(){
         this.a= +prompt("Introduzca el valor a");
         this.b= +prompt("Introduzca el valor b");
@@ -23,7 +23,7 @@ function Calculator () {
     };
 };
 
-let calculadora = new Calculator();
+let calculadora = new Calculator(); 
 
 calculadora.read();
 alert("Suma=" + calculadora.sum());
