@@ -13,11 +13,11 @@ alert(accumulator.value); // muestra la suma de estos valores*/
 function Accumulator(valor){
     this.value=valor;
     this.read= function(){
-        this.value += +prompt("Introduce un nuevo valor");
+        this.value += +prompt("Introduce un nuevo valor");  //Acumulamos en valor las sumas de los números
     }
 };
 
-let accumulator = new Accumulator(1);
+let accumulator = new Accumulator(0); //Valor inicial
 accumulator.read(); 
 accumulator.read(); 
 alert(accumulator.value);
