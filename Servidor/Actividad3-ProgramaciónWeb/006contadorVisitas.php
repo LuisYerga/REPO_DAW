@@ -4,9 +4,9 @@
 muestre su valor (valor de un contador). Además, debes permitir que el usuario
 reinicialice su contador de visitas.*/
 
-if (isset($_GET['reset']) && $_GET['reset'] === 'true') {
-    $visitas = 0; // Reinicia el contador
-    setcookie('contador', $visitas, time() + 365 * 24 * 60 * 60); 
+if (isset($_GET['reset']) && $_GET['reset'] == 'true') {
+    $_COOKIE['contador']=0; // Reinicia el contador
+    setcookie('contador', $_COOKIE['contador'], time() + 365 * 24 * 60 * 60);
 }
 if(isset($_COOKIE['contador'])){
     setcookie('contador', $_COOKIE['contador'] +1, time()+365*24*60*60);
