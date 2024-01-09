@@ -1,0 +1,28 @@
+<!--Si elem – es un elemento nodo arbitrario del DOM…
+
+¿Es cierto que elem.lastChild.nextSibling siempre es null?
+
+¿Es cierto que elem.children[0].previousSibling siempre es null ?
+
+Demúestralo.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>001</title>
+    <script defer src="001siblings.js"></script>
+</head>
+<body>
+    <div>
+        <p>Primer parrafo</p>
+        <p>Segundo parrafo</p>
+        <p>Tercero parrafo</p>
+    </div>
+</body>
+</html>
+
+<!--La primera afirmación es correcta. Para que ambas sean null deben estar de la siguiente manera en el html:
+"<div><p>Primer parrafo</p><p>Segundo parrafo</p><p>Tercero parrafo</p></div>" Al introducirse saltos de linea nos indicara que elem.children[0].previousSibling es un text.
+Con elem.lastChild.nextSibling no se consigue puesto que siempre interpreta el salto de liena ,o cualquier elemento ,como último hijo del cual no hay nada más alla-->

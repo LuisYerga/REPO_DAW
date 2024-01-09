@@ -1,0 +1,29 @@
+<!--createTextNode vs innerHTML vs textContent:
+
+Tenemos un elemento DOM vacío elem y un string text.
+
+¿Cuáles de estos 3 comandos harán exactamente lo mismo? Pon un ejemplo.
+
+elem.append(document.createTextNode(text))
+
+elem.innerHTML = text
+
+elem.textContent = text-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>005</title>
+    <script defer src="005inserts.js"></script>
+</head>
+<body>
+    <div id="div">
+        <h1>Texto</h1>
+    </div>
+</body>
+</html>
+
+<!--Solo elem.append(document.createTextNode(text)) respetará los nodos ya creados y añadira el nuevo al final de los demás. 
+Los otros dos se comportaran de la misma forma eliminando en este caso el h1  -->
