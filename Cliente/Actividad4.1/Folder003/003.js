@@ -4,7 +4,7 @@
 
 let parrafo=document.querySelector('p.parrafo');
 
-parrafo.setAttribute('data-tipo', 'nuevo-parrafo');
+parrafo.setAttribute('data-tipo', 'nuevo-parrafo');  //Cambiamos el atributo data-tipo
 
 let valorDataTipo= parrafo.getAttribute('data-tipo');
 console.log('El valor de data-tipo es:' , valorDataTipo);

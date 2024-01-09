@@ -2,7 +2,7 @@
 
 //011- Usando JavaScript, selecciona el enlace (<a>) y muestra en la consola su innerHTML y outerHTML.
 
-const enlace = document.querySelector('a');
+let enlace = document.querySelector('a'); 
 
 console.log("innerHTML del enlace:", enlace.innerHTML);
 

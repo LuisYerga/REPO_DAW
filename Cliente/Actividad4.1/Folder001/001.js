@@ -4,6 +4,6 @@
 
 const container= document.getElementById('contenedor'); //Seleccionamos el contenedor por su id
 
-const childCont= container.childNodes; //Seleccionamos todos los nodos del contenedor
+let childCont= container.childNodes; //Seleccionamos todos los nodos del contenedor
 
 console.log("Los hijos son:" , childCont); 
