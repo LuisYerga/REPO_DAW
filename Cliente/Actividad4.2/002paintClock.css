@@ -1,0 +1,15 @@
+#pantalla{
+    display: inline-flex;
+}
+
+#hora{
+    color: red;
+}
+
+#minutos{
+    color: green;
+}
+
+#segundos{
+    color: blue;
+}
