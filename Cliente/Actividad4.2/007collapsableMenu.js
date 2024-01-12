@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 
 let collapse= document.querySelector('.title'); //Seleccionamos los elementos del html
 let desplegable= document.querySelector('ul');
