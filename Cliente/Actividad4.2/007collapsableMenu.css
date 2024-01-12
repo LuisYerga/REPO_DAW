@@ -1,4 +1,20 @@
-.menu ul{
-    display: none;
+ul{
+    visibility: hidden;
 }
+
+
+.active{ /*Separar en una clase exclusiva. NO poner ul .active o etc*/
+    visibility: visible; 
+}
+
+
+/*
+#id{
+    visibility: hidden;
+}
+
+.active{ Si se hace con una id utilizar important para la prioridad
+    visibility: visible !important; 
+}
+*/
 
