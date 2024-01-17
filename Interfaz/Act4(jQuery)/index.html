@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Act4</title>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script defer src="script.js"></script>
+    <script defer src="validacion.js" type="text/javascript"></script>
 </head>
 <body>
     <header>
@@ -17,6 +17,7 @@
                 <h1>Luis S.A</h1>
                 <p>La nuestra es una empresa fantasma creada con el único proposito de rellenar hueco en esta página web. 
                 Fue fundada el 15 de enero del año 2024 por Luis Yerga Mayor</p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3140.013111876575!2d-5.824952504563202!3d38.09335858748592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd13a3fa0467e77d%3A0x6b7fda811c87b593!2sC.%20San%20Francisco%2C%2041390%20Guadalcanal%2C%20Sevilla!5e0!3m2!1ses!2ses!4v1705497210125!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <div id="imagenes">
                 <h4>Nuestras instalaciones:</h4>
@@ -24,21 +25,21 @@
             </div>
         </section>
         <section id="formulario">
-            <form action="" method="post">
+            <form name="formi" id="formi" method="post">
                 <label for="nombre">Nombre</label>
-                <input type="text" name="nombre">
+                <input type="text" name="nombre" id="nombre">
                 <label for="apellidos">Apellidos</label>
-                <input type="text" name="apellidos">
+                <input type="text" name="apellidos" id="apellidos">
                 <label for="email">Email</label>
-                <input type="text" name="email">
+                <input type="text" name="email" id="email">
                 <label for="asunto">Asunto</label>
-                <input type="text" name="asunto">
-                <label for="comen">Comentario</label>
-                <input type="text" name="comen">
-                <label for="Terminos"><input type="checkbox">He leido y acepto la pólitica de privacidad </label>
-                <label for="captcha">¿Eres un robot?:</label>
-                <input name="captcha">
-                <button disabled>Enviar</button>
+                <textarea type="textarea" name="asunto" id="asunto"></textarea>
+                <label for="comentario">Comentario</label>
+                <textarea type="textarea" id="comentario" name="comentario"></textarea>
+                <label for="terminos"><input id="terminos" name="terminos" type="checkbox">He leido y acepto la pólitica de privacidad </label>
+                <label for="captcha">¿Eres un robot?:<span id="operation"></span></label>
+                <input type="text" id="captcha" name="captcha">
+                <p id="buttonsubmit"><button class="submit">Enviar</button></p>
             </form>
         </section>
     </main>
