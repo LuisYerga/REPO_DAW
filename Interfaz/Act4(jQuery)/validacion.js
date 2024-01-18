@@ -43,13 +43,17 @@ function checkOperation(idResultado, resultado){
     }
 }
 
-function enableSubmit(idForm) {
-    $(idForm + " button.submit").removeAttr("disabled");
-}
-  
-function disableSubmit(idForm) {
-    $(idForm + " button.submit").attr("disabled", "disabled");
-}
+$("#captcha").on("input", function(){
+    let valorIntroducido = parseFloat($("#captcha").val());
+    console.log(valorIntroducido);
+    if(!isNaN(valorIntroducido) && valorIntroducido === resultado){
+        $("#correct").removeClass("active"); 
+        $("#incorrect").addClass("active");
+    }else{
+        $("#correct").addClass("active"); 
+        $("#incorrect").removeClass("active");
+    }
+});
 
 
 function captcha() {

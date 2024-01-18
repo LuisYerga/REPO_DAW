@@ -37,3 +37,12 @@ $('#oficina2').mouseout(function(){
         width: "300px" 
     });
 });
+
+$(window).scroll(function(){ //Controlador de scroll de la página
+    let winTop = $(window).scrollTop(); //Obtenemos la cantidad de scroll vertical desde el principio de la página
+    if(winTop >= 15){
+      $("body").addClass("sticky-header");
+    }else{
+      $("body").removeClass("sticky-header");
+    }
+});

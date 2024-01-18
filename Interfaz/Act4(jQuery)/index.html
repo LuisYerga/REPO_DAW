@@ -13,12 +13,16 @@
 </head>
 <body>
     <header>
-
+        <h1>Luis S.A</h1>
+        <nav>
+            <a href="">Información</a>
+            <a href="">Formulario</a>
+            <a href="">Footer</a>
+        </nav>
     </header>
     <main>
-        <section name="banner">
+        <section id="informacion">
             <div id="banner">
-                <h1>Luis S.A</h1>
                 <h2 class="desplegar">Sobre nosotros:</h2>
                 <div id="info" class="element">
                     <p>La nuestra es una empresa fantasma creada con el único proposito de rellenar hueco en esta página web. 
@@ -40,22 +44,28 @@
             </div>
         </section>
         <section id="formulario">
-            <form name="formi" id="formi" method="post">
-                <label for="nombre">Nombre</label>
-                <input type="text" name="nombre" id="nombre">
-                <label for="apellidos">Apellidos</label>
-                <input type="text" name="apellidos" id="apellidos">
-                <label for="email">Email</label>
-                <input type="text" name="email" id="email">
-                <label for="asunto">Asunto</label>
-                <textarea type="textarea" name="asunto" id="asunto"></textarea>
-                <label for="comentario">Comentario</label>
-                <textarea type="textarea" id="comentario" name="comentario"></textarea>
-                <label for="terminos"><input id="terminos" name="terminos" type="checkbox">He leido y acepto la pólitica de privacidad </label>
-                <label for="captcha">¿Eres un robot?:<span id="operation"></span></label>
-                <input type="text" id="captcha" name="captcha">
-                <p id="buttonsubmit"><button class="submit">Enviar</button></p>
-            </form>
+            <div id="form">
+                <form name="formi" id="formi" method="post">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre" id="nombre">
+                    <label for="apellidos">Apellidos</label>
+                    <input type="text" name="apellidos" id="apellidos">
+                    <label for="email">Email</label>
+                    <input type="text" name="email" id="email">
+                    <label for="asunto">Asunto</label>
+                    <textarea type="textarea" name="asunto" id="asunto"></textarea>
+                    <label for="comentario">Comentario</label>
+                    <textarea type="textarea" id="comentario" name="comentario"></textarea>
+                    <label for="terminos"><input id="terminos" name="terminos" type="checkbox">He leido y acepto la pólitica de privacidad </label>
+                    <label for="captcha">¿Eres un robot?:<span id="operation"></span></label>
+                    <input type="text" id="captcha" name="captcha">
+                    <div id="comprobador">
+                    <img src="img/correcto.png" alt="correcto" class="imgCaptcha active" id="correct">
+                    <img src="img/incorrecto.png" alt="incorrecto" class="imgCaptcha active" id="incorrect">
+                    </div>
+                    <p id="buttonsubmit"><button class="submit">Enviar</button></p>
+                </form>
+            </div>
         </section>
         <section id="mensajeForm">
             <div id="mensaje">
@@ -65,7 +75,10 @@
         </section>
     </main>
     <footer>
-
+        <div>
+            <h5>Redes Sociales</h5>
+            <h5>Encuentranos</h5>
+        </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
