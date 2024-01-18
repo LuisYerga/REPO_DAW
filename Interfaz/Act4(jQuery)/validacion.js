@@ -72,8 +72,9 @@ function checkForm(idForm){
         checkTextArea("#comentario") &&
         checkRadioBox("#terminos")&&
         checkOperation("#captcha", resultado)){
-        this.submit();
-        console.log("Formulario va");
+        //this.submit();
+        $(this).slideUp();
+        $('#mensaje').slideDown();
         }else{
             console.log("Formulario no válido");
         }

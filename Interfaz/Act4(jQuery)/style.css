@@ -5,3 +5,11 @@
 .element{
     display: none;
 }
+
+#mensaje{
+    display: none;
+}
+
+#galeria{
+    width: 300px;
+}

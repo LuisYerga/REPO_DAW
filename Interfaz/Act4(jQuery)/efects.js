@@ -1,15 +1,5 @@
 "use strict";
 
-let desplegable= document.querySelector('.element');
-let desplegar= document.querySelector('.desplegar');
-
-/*$(document).ready(function(){
-    $('.desplegar').click(function(){
-        $('.element').not($(this).next('.element')).slideUp();;
-        $(this).next('.element').slideToggle();
-    });
-});*/
-
 $(document).ready(function(){
     $('.desplegar').click(function(){
         let $clicked= $(this);
@@ -21,5 +11,17 @@ $(document).ready(function(){
                 $(this).slideUp();
             }
         });
+    });
+});
+
+$('#galeria').mouseenter(function(){
+    $('#galeria').animate({
+        width: "600px" 
+    });
+});
+
+$('#galeria').mouseleave(function(){
+    $('#galeria').animate({
+        width: "300px" 
     });
 });
