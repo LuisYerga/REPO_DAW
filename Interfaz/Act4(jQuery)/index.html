@@ -44,31 +44,48 @@
             </div>
         </section>
         <section id="formulario">
-            <div id="form">
-                <form name="formi" id="formi" method="post">
-                    <label for="nombre">Nombre</label>
-                    <input type="text" name="nombre" id="nombre">
-                    <label for="apellidos">Apellidos</label>
-                    <input type="text" name="apellidos" id="apellidos">
-                    <label for="email">Email</label>
-                    <input type="text" name="email" id="email">
-                    <label for="asunto">Asunto</label>
-                    <textarea type="textarea" name="asunto" id="asunto"></textarea>
-                    <label for="comentario">Comentario</label>
-                    <textarea type="textarea" id="comentario" name="comentario"></textarea>
-                    <label for="terminos"><input id="terminos" name="terminos" type="checkbox">He leido y acepto la pólitica de privacidad </label>
-                    <label for="captcha">¿Eres un robot?:<span id="operation"></span></label>
-                    <input type="text" id="captcha" name="captcha">
-                    <div id="comprobador">
-                    <img src="img/correcto.png" alt="correcto" class="imgCaptcha active" id="correct">
-                    <img src="img/incorrecto.png" alt="incorrecto" class="imgCaptcha active" id="incorrect">
+            <div id="form" class="container">
+                <form name="formi" id="formi"  class=" justify-content-center flex-wrap" method="post">
+                    <div class="mb-3 col-md-4">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" name="nombre" id="nombre" class="linea1">
                     </div>
-                    <p id="buttonsubmit"><button class="submit">Enviar</button></p>
+                    <div class="mb-3 col-md-4">
+                        <label for="apellidos">Apellidos:</label>
+                        <input type="text" name="apellidos" id="apellidos" class="linea1">
+                    </div>
+                    <div class="mb-3 col-md-4">
+                        <label for="email">Email:</label>
+                        <input type="text" name="email" id="email" class="linea1">
+                    </div>
+                    <div class="col-md-12">
+                        <label for="asunto">Asunto:</label>
+                        <textarea type="textarea" name="asunto" id="asunto"></textarea>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="comentario">Comentario:</label>
+                        <textarea type="textarea" id="comentario" name="comentario"></textarea>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="terminos"><input id="terminos" name="terminos" type="checkbox">He leido y acepto la pólitica de privacidad </label>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="captcha">¿Eres un robot?:<span id="operation"></span></label>
+                        <input type="text" id="captcha" name="captcha">
+                    
+                        <div id="comprobador" class="d-inline-block">
+                            <img src="img/correcto.png" alt="correcto" class="imgCaptcha active" id="correct">
+                            <img src="img/incorrecto.png" alt="incorrecto" class="imgCaptcha active" id="incorrect">
+                        </div>
+                    </div>
+                    <div class="col-md-12 text-end">
+                        <p id="buttonsubmit"><button class="submit">Enviar</button></p>
+                    </div>
                 </form>
             </div>
         </section>
         <section id="mensajeForm">
-            <div id="mensaje">
+            <div id="mensaje" class="text-center">
                 <h3>Su mensaje se ha enviado con éxito</h3>
             </div>
 

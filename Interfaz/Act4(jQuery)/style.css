@@ -73,9 +73,6 @@ body.sticky-header header h1 {
     text-align: center;
 }
 
-#form{
-    display: grid;
-}
 .element{
     display: none;
 }
@@ -99,3 +96,22 @@ body.sticky-header header h1 {
 .active{
     display: none;
 }
+
+#formi{
+    display: inline-flex;
+}
+
+.linea1{
+    width: 90%;
+}
+
+textarea{
+    width: 100%;
+    height: 100px;
+}
+
+.submit{
+    width: 100px;
+    height: 35px;
+}
+
