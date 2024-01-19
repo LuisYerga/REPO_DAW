@@ -115,3 +115,11 @@ textarea{
     height: 35px;
 }
 
+footer{
+    background-color:#3498db;
+    color: #fff;
+}
+
+.footer-tittle{
+    background-color: rgba(0, 0, 0, 0.1);
+}
