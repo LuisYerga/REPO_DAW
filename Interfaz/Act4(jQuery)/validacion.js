@@ -76,9 +76,36 @@ function checkForm(idForm){
         checkTextArea("#comentario") &&
         checkRadioBox("#terminos")&&
         checkOperation("#captcha", resultado)){
-        //this.submit();
-        $(this).slideUp();
-        $('#mensaje').slideDown();
+            let formData= $(this).serialize(); //Guardamos los datos del fromulario
+
+            $.post("peticion.php", formData, function(response) { //Petición ajax con url al php, datos del form y el control de la respuesta del servidor
+                if(response==="Su mensaje se ha enviado con éxito"){ //Mensaje recibido de php
+                    $(idForm).slideUp();
+                    $("#mensaje h3").text(response); //Añadimos el mensaje al html
+                    $('#mensaje').slideDown();
+                }else {
+                    console.log("Error al procesar el formulario en el servidor");
+                }
+            }).fail(function() { //Si se falla al enviar la petición
+                console.log("Error en la petición AJAX");
+            });
+
+            /*
+            $.ajax({  //Petición Ajax simplificada
+                type: "POST",  
+                url: "peticion.php", 
+                data: formData,
+                success: function(response){ //Respuesta del servidor
+                    if(response==="Su mensaje se ha enviado con éxito"){
+                        $(idForm).slideUp();
+                        $("#mensaje h3").text(response);
+                        $('#mensaje').slideDown();
+                    }
+                },
+                error: function () {
+                    console.log("Error en la petición AJAX");
+                }
+            });*/
         }else{
             console.log("Formulario no válido");
         }
