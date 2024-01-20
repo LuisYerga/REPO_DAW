@@ -14,6 +14,11 @@ $(document).ready(function(){
     });
 });
 
+$('.ubicacion').click(function(){
+    $('.element').slideUp();
+    $('#maps').slideDown();
+});
+
 $('#oficina1').mouseenter(function(){
     $('#oficina1').animate({
         width: "600px"
