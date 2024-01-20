@@ -82,6 +82,10 @@ function checkForm(idForm){
                 if(response==="Su mensaje se ha enviado con éxito"){ //Mensaje recibido de php
                     $(idForm).slideUp();
                     $("#mensaje h3").text(response); //Añadimos el mensaje al html
+                    $("#mensaje").prepend("<p>El servidor dice:</p>");
+                    $("#mensaje").append("<p>¡Gracias por ponerse en contacto!</p>");
+                    $("<p class='aft'></p>").insertAfter("#mensaje h3");
+                    $("#mensaje .aft").html("¡Enhorabuena!");
                     $('#mensaje').slideDown();
                 }else {
                     console.log("Error al procesar el formulario en el servidor");
