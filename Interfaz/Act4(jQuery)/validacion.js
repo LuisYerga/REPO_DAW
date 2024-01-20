@@ -82,9 +82,12 @@ function checkForm(idForm){
                 if(response==="Su mensaje se ha enviado con éxito"){ //Mensaje recibido de php
                     $(idForm).slideUp();
                     $("#mensaje h3").text(response); //Añadimos el mensaje al html
-                    $("#mensaje").prepend("<p>El servidor dice:</p>");
+                    $("#mensaje").prepend("<p>El servidor dice</p>");
                     $("#mensaje").append("<p>¡Gracias por ponerse en contacto!</p>");
-                    $("<p class='aft'></p>").insertAfter("#mensaje h3");
+                    let nuevoParrafo = $("<p></p>");
+                    nuevoParrafo.attr("class", "aft");
+                    $("<p>Esto:</p>").insertBefore("#mensaje h3");
+                    $(nuevoParrafo).insertAfter("#mensaje h3");
                     $("#mensaje .aft").html("¡Enhorabuena!");
                     $('#mensaje').slideDown();
                 }else {
