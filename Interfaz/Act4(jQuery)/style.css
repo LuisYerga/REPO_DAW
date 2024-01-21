@@ -69,11 +69,46 @@ body.sticky-header header h1 {
     justify-content: center;
 }
 #banner{
-    display:inline-block;
     text-align: center;
+    width: 100%;
 }
 
 .element{
+    display: none;
+}
+
+
+#oficina1{
+    width: 40%;
+}
+
+#oficina2{
+    width: 40%;
+}
+#oficina3{
+    width: 40%;
+}
+
+#maps iframe{
+    width: 40%;
+    height: 100%;
+    position: relative;
+}
+
+#maps{
+    width:100%;
+    height:200px;
+}
+
+#formi{
+    display: inline-flex;
+}
+
+.imgCaptcha{
+    width: 40px;
+} 
+
+.active{
     display: none;
 }
 
@@ -81,24 +116,8 @@ body.sticky-header header h1 {
     display: none;
 }
 
-.element img{
-    width: 300px;
-}
-
-#oficinas{
-    height: 300px;
-}
-
-.imgCaptcha{
-    width: 40px;
-}
-
-.active{
-    display: none;
-}
-
-#formi{
-    display: inline-flex;
+.negrita{
+    font-weight: bolder;
 }
 
 .linea1{

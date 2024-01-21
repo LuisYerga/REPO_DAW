@@ -21,25 +21,31 @@ $('.ubicacion').click(function(){
 
 $('#oficina1').mouseenter(function(){
     $('#oficina1').animate({
-        width: "600px"
+        width: "55%"
     });
+    $('#oficina2').hide();
 });
 
 $('#oficina1').mouseleave(function(){
     $('#oficina1').animate({
-        width: "300px" 
+        width: "40%" 
     });
+    $('#oficina2').show();
 });
 
 $('#oficina2').mouseover(function(){
+    $('#oficina3').toggle();
+    $('#oficina2').attr('src', 'img/cambiarFoto.jpeg');
     $('#oficina2').animate({
-        width: "600px" 
+        width: "55%" 
     });
 });
 
 $('#oficina2').mouseout(function(){
+    $('#oficina3').toggle();
+    $('#oficina2').attr('src', 'img/oficinas2.jpeg');
     $('#oficina2').animate({
-        width: "300px" 
+        width: "40%" 
     });
 });
 
@@ -50,4 +56,20 @@ $(window).scroll(function(){ //Controlador de scroll de la página
     }else{
       $("body").removeClass("sticky-header");
     }
+});
+
+$(document).ready(function(){
+    function toggleLabelClass(input) {
+        let label = input.siblings('label'); // Busca el label hermano del input
+        label.toggleClass("negrita", input.is(":focus"));
+    }
+
+    $(".cambioFont :input").on({
+        focusin: function () {
+            toggleLabelClass($(this));
+        },
+        focusout: function () {
+            toggleLabelClass($(this));
+        }
+    });
 });
