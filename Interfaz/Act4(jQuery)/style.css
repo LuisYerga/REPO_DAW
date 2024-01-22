@@ -1,7 +1,3 @@
-* {
-    box-sizing: border-box;
-}
-
 body {
     background-color: #ecf0f1;
     font-family: helvetica, arial, sans-serif;
@@ -60,7 +56,7 @@ body.sticky-header header {
     background-color: rgba(52, 152, 219, 0.9);
 }
 
-body.sticky-header header h1 {
+body.sticky-header header h1 {  /*Quitamos el h1 cuando se aplique la clase*/
     transform: scale(0);
 }
 
@@ -76,7 +72,6 @@ body.sticky-header header h1 {
 .element{
     display: none;
 }
-
 
 #oficina1{
     width: 40%;
