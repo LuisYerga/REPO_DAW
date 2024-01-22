@@ -73,3 +73,20 @@ $(document).ready(function(){
         }
     });
 });
+
+
+$(window).resize(function(){
+    if($(window).width()<=992){
+        $('#col-terminos').removeClass("col-md-5");
+        $('#col-terminos').addClass("col-md-3");
+        $('#col-captcha').removeClass("col-md-7");
+        $('#col-captcha').addClass("col-md-9");
+    }else{
+        $('#col-terminos').addClass("col-md-5");
+        $('#col-terminos').removeClass("col-md-3");
+        $('#col-captcha').addClass("col-md-7");
+        $('#col-captcha').removeClass("col-md-9");
+    }
+
+});
+

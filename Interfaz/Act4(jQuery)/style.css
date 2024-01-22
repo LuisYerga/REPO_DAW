@@ -100,10 +100,6 @@ body.sticky-header header h1 {
     height:200px;
 }
 
-#formi{
-    display: inline-flex;
-}
-
 .imgCaptcha{
     width: 40px;
 } 
@@ -121,7 +117,7 @@ body.sticky-header header h1 {
 }
 
 .linea1{
-    width: 90%;
+    width: 95%;
 }
 
 textarea{

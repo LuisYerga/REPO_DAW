@@ -48,37 +48,47 @@
         </section>
         <section id="formulario">
             <div id="form" class="container">
-                <form name="formi" id="formi"  class=" justify-content-center flex-wrap" method="post">
-                    <div class="mb-3 col-md-4 cambioFont">
-                        <label for="nombre">Nombre:</label>
-                        <input type="text" name="nombre" id="nombre" class="linea1">
+                <form name="formi" id="formi"  class=" justify-content-center" method="post">
+                    <div class="row">
+                        <div class="mb-3 col-md-4 cambioFont">
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" name="nombre" id="nombre" class="linea1">
+                        </div>
+                        <div class="mb-3 col-md-4 cambioFont">
+                            <label for="apellidos">Apellidos:</label>
+                            <input type="text" name="apellidos" id="apellidos" class="linea1">
+                        </div>
+                        <div class="mb-3 col-md-4 cambioFont">
+                            <label for="email">Email:</label>
+                            <input type="text" name="email" id="email" class="linea1">
+                        </div>
                     </div>
-                    <div class="mb-3 col-md-4 cambioFont">
-                        <label for="apellidos">Apellidos:</label>
-                        <input type="text" name="apellidos" id="apellidos" class="linea1">
+                    <div class="row">
+                        <div class="col-md-12 cambioFont">
+                            <label for="asunto">Asunto:</label>
+                            <textarea type="textarea" name="asunto" id="asunto"></textarea>
+                        </div>
                     </div>
-                    <div class="mb-3 col-md-4 cambioFont">
-                        <label for="email">Email:</label>
-                        <input type="text" name="email" id="email" class="linea1">
+                    <div class="row">
+                        <div class="col-md-12 cambioFont">
+                            <label for="comentario">Comentario:</label>
+                            <textarea type="textarea" id="comentario" name="comentario"></textarea>
+                        </div>
                     </div>
-                    <div class="col-md-12 cambioFont">
-                        <label for="asunto">Asunto:</label>
-                        <textarea type="textarea" name="asunto" id="asunto"></textarea>
-                    </div>
-                    <div class="col-md-12 cambioFont">
-                        <label for="comentario">Comentario:</label>
-                        <textarea type="textarea" id="comentario" name="comentario"></textarea>
-                    </div>
-                    <div class="col-md-4">
-                        <label for="terminos"><input id="terminos" name="terminos" type="checkbox">He leido y acepto la pólitica de privacidad </label>
-                    </div>
-                    <div class="col-md-4">
-                        <label for="captcha">¿Eres un robot?:<span id="operation"></span></label>
-                        <input type="text" id="captcha" name="captcha">
-                    
-                        <div id="comprobador" class="d-inline-block">
-                            <img src="img/correcto.png" alt="correcto" class="imgCaptcha active" id="correct">
-                            <img src="img/incorrecto.png" alt="incorrecto" class="imgCaptcha active" id="incorrect">
+                    <div class="row">
+                        <div class="col-md-5" id="col-terminos">
+                            <label for="terminos"><input id="terminos" name="terminos" type="checkbox">He leido y acepto la pólitica de privacidad </label>
+                        </div>
+                        <div class="row col-md-7 " id="col-captcha">
+                            <div class="">
+                                <label for="captcha">¿Eres un robot?:<span id="operation"></span></label>
+                                <input type="text" id="captcha" name="captcha">
+                            
+                                <div id="comprobador" class="d-inline-block">
+                                    <img src="img/correcto.png" alt="correcto" class="imgCaptcha active" id="correct">
+                                    <img src="img/incorrecto.png" alt="incorrecto" class="imgCaptcha active" id="incorrect">
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-12 text-end">
