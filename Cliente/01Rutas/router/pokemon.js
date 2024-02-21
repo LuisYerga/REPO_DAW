@@ -74,6 +74,28 @@ router.delete('/:id', async(req,res)=>{
     }
 })
 
+router.put('/:id', async(req,res)=>{
+    const id =req.params.id;
+    const body=req.body;
+    console.log('body', body)
+    try{
+        const pokemonDB=await Pokemon.findByIdAndUpdate(
+            id,body, {useFindAndModifiy:false}
+        )
+        console.log(pokemonDB)
+        res.json({
+            estado:true,
+            mensaje:'Pokémon editado'
+        })
+    }catch(error){
+        console.log(error)
+        res.json({
+            estado:false,
+            mensaje:'Problema al editar pokemon'
+        })
+    }
+})
+
 module.exports=router;
 
 
