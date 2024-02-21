@@ -1,0 +1,54 @@
+<%-include("template/cabecera", {tituloWeb:"Detalle del pokemon"})%>
+
+<div class="container">
+    <h1>Detalles del pokemon</h1>
+    <% if (error) { %>
+        <%=mensaje%>
+        <a href="/pokemon" class="btn btn-dark btn-block my-2">Volver</a>
+    <% } %>
+    <% if (!error) { %>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Tipo</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row"><%=pokemon.id%></th>
+                    <th><%=pokemon.nombre%></th>
+                    <th><%=pokemon.tipo%></th>
+                    <th><%=pokemon.descripcion%></th>
+                    <td><button id="eliminar" class="btn btn-warning btn-sm" data-id="<%= pokemon._id %>">Eliminar</button></td>
+                </tr>
+            </tbody>
+        </table>
+    <% } %>
+</div>
+
+<%-include("template/footer")%>
+
+<script>
+    const btnEliminar=document.getElementById('eliminar')
+    btnEliminar.addEventListener('click', async () => {
+        console.log(btnEliminar.dataset.id)
+        try{
+            const data=await fetch(`/pokemon/${btnEliminar.dataset.id}`,{
+                method:'delete'
+            })
+            const res= await data.json()
+            console.log(res)
+            if(res.estado){
+                window.location.href='/pokemon'
+            }else{
+                console.log(res)
+            }
+        }catch(error){
+            console.log(error)
+        }
+    })
+</script>
